@@ -19,16 +19,16 @@ bot.on('message', message => {
             message.channel.send(
 `*markdown*
 **markdown**
-~~markdown~~
-`)
+~~markdown~~`)
         }
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
-
-        
-    
-    }});
+        else if(message.content === '.ping'){
+        const m = await message.channel.send("Ping?");
+        m.edit(`Pong! latence: ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        }    
+        }});
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
         return channel.send('bienvenue sur mon serveur '+ member.displayName);
