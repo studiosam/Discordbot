@@ -25,9 +25,7 @@ client.on('message', message => {
         if(message.content.indexOf(PREFIX) !== 0) return;
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        // if(command === 'hello'){
-        //     message.channel.send('```World ! ```')
-        // }
+
         // if(message.content === '... long'){
         //     message.channel.send({embed});
         // }
