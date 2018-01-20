@@ -1,4 +1,4 @@
-const bot = require('discord.js');
+const Discord = require('discord.js');
 const bot = new Discord.Client({autoReconnect: true});
 
 const PREFIX = ".";
