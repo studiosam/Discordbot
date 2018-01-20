@@ -14,10 +14,10 @@ bot.on('message', message => {
     if(message.content[0] === PREFIX){
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        if(command === '.hello'){
+        if(command === 'hello'){
             message.channel.send('```World ! ```')
         }
-        else if(command === '.markdown'){
+        else if(command === 'markdown'){
             message.channel.send(
 `*markdown*
 **markdown**
