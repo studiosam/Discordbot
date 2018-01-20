@@ -5,7 +5,7 @@ const PREFIX = ".";
 
 bot.on('ready', function(){
     console.log('pret !');
-    bot.user.setGame('te regarder');
+    bot.user.setGame('vec studiosam');
 
 });
 
