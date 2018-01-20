@@ -1,23 +1,16 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client({autoReconnect: true});
+const client = new Discord.Client({autoReconnect: true});
 
 const PREFIX = ".";
 const fs = require("fs");
 bot.commands = new Discord.Collection();
-fs.readdir("./cmds/",(err, files) => {
-  if (err) console.log(err);
 
-  let jsfiles = files.filter(f => f.split(".").pop() === "js");
-  if (jsfiles.length <= 0) {
-    console.log("pas de command charger");
-    return;
-  }
-  console.log(`${jsfiles.length} command charger`);
-
-  jsfiles.forEach((f, i) => {
-    let props = require(`./cmds/${f}`);
-    console.log(`${i + 1}`);
-    bot.commands.set(props.help.name, props);
+fs.readdir("./cmds/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    let eventFunction = require(`./cmds/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 
@@ -38,11 +31,13 @@ bot.on('message', message => {
         if(message.content === '... long'){
             message.channel.send({embed});
         }
-        let cmd = bot.commands.get(command.slice(PREFIX.length));
-        if (cmd) {
-          cmd.run(bot, message, args)
+        try {
+          let commandFile = require(`./cmds/${command}.js`);
+          commandFile.run(client, message, args);
+        } catch (err) {
+          console.error(err);
         }
-
+      });
       /*  try {
           let commandFile = require(`./modules/long.js`);
           commandFile.run(client, message, args);
