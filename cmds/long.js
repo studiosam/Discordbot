@@ -1,5 +1,7 @@
 module.exports.run = async (client, message, args) => {
-message.channel.send({embed});
+  if (message.content === '... long') {
+    message.channel.send({embed});
+  }
 
   const embed = new Discord.RichEmbed()
  .setTitle("Comment utiliser les long artworks")
