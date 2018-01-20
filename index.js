@@ -17,20 +17,9 @@ bot.on('message', message => {
         if(command === 'hello'){
             message.channel.send('```World ! ```')
         }
-        else if(command === 'markdown'){
-            message.channel.send(
-`*markdown*
-**markdown**
-~~markdown~~`)
-        }
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
-        else if(command === "ping") {
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-}
-  
         }});
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
