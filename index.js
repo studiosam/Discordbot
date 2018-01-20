@@ -26,6 +26,10 @@ bot.on('message', message => {
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
+        else if(command === "ping") {
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+}
   
         }});
 bot.on('guildMemberAdd', member => {
