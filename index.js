@@ -26,7 +26,7 @@ bot.on('message', message => {
             message.channel.send({embed});
         }
         else if(message.content ==='.jr'){
-            message.channel.send('.joinrace');
+            message.channel.send('.jr');
         }
         
     
