@@ -3,6 +3,12 @@ const bot = new Discord.Client({autoReconnect: true});
 
 const PREFIX = ".";
 const fs = require("fs");
+bot.commands = new Discord.Collection();
+fs.readdir("./modules/",(err, files) => {
+  if (err) console.log(err);
+
+  let jsfiles = files.filter(f => f.split(".").pop() === "js");
+});
 
 bot.on('ready', function(){
     console.log('pret !');
@@ -18,13 +24,13 @@ bot.on('message', message => {
             message.channel.send('```World ! ```')
         }
 
-        try {
+      /*  try {
           let commandFile = require(`./modules/long.js`);
           commandFile.run(client, message, args);
           } catch (err) {
           console.error(err);
         }
-        }});
+      */}});
 
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {

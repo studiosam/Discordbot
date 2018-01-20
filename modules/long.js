@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
   if (command=='hey') {
     message.channel.send('hey')
   }
@@ -27,4 +27,7 @@ Ou celui ci pour upload en screenshot MAIS PAS LES DEUX
 .addBlankField(true)
 .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);
 
+}
+module.exports.help = {
+  name: "long"
 }
