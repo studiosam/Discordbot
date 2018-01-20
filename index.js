@@ -16,21 +16,22 @@ fs.readdir("./cmds/", (err, files) => {
 
 bot.on('ready', function(){
     console.log('pret !');
-    console.log(bot.commands);
     bot.user.setGame('vec studiosam');
 });
 
 
 bot.on('message', message => {
     if(message.content[0] === PREFIX){
+        if (message.author.bot) return;
+        if(message.content.indexOf(PREFIX) !== 0) return;
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        if(command === 'hello'){
-            message.channel.send('```World ! ```')
-        }
-        if(message.content === '... long'){
-            message.channel.send({embed});
-        }
+        // if(command === 'hello'){
+        //     message.channel.send('```World ! ```')
+        // }
+        // if(message.content === '... long'){
+        //     message.channel.send({embed});
+        // }
         try {
           let commandFile = require(`./cmds/${command}.js`);
           commandFile.run(client, message, args);
