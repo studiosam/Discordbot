@@ -39,14 +39,7 @@ bot.on('message', message => {
           console.error(err);
         }
       });
-      /*  try {
-          let commandFile = require(`./modules/long.js`);
-          commandFile.run(client, message, args);
-          } catch (err) {
-          console.error(err);
-        }
-      */}});
-
+      
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
         return channel.send('bienvenue sur mon serveur '+ member.displayName);
