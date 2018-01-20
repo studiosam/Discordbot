@@ -17,7 +17,7 @@ fs.readdir("./cmds/",(err, files) => {
   jsfiles.forEach((f, i) => {
     let props = require(`./cmds/${f}`);
     console.log(`${i + 1}`);
-    bot.commands.set(f, props);
+    bot.commands.set(props.help.name, props);
   });
 });
 
@@ -37,6 +37,10 @@ bot.on('message', message => {
         }
         if(message.content === '... long'){
             message.channel.send({embed});
+        }
+        let cmd = bot.commands.get(command.slice(PREFIX.length));
+        if (cmd) {
+          cmd.run(bot, message, args);          
         }
 
       /*  try {
