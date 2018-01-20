@@ -23,6 +23,7 @@ client.on('message', message => {
     if(message.content[0] === PREFIX){
       if (message.channel.id !== '404245392159670272' || message.channel.id !== '404245392159670272') {
         message.delete();
+        return;
       }
         if (message.author.bot) return;
         if(message.content.indexOf(PREFIX) !== 0) return;
