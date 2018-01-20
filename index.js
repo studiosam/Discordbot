@@ -25,6 +25,9 @@ bot.on('message', message => {
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
+        else if(message.content ==='.race'){
+            message.channel.send('.jr');
+        }
         
     
     }});
