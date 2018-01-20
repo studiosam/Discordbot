@@ -25,10 +25,10 @@ client.on('message', message => {
         if(message.content.indexOf(PREFIX) !== 0) return;
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-
-        // if(message.content === '... long'){
-        //     message.channel.send({embed});
-        // }
+         if(message.content === '... long'){
+           let commandFile = require(`./cmds/long.js`);
+           commandFile.run(client, message, args);
+       }
         try {
            let commandFile = require(`./cmds/${command}.js`);
            commandFile.run(client, message, args);
@@ -36,11 +36,8 @@ client.on('message', message => {
            console.error(err);
          }
         }
-        if (message.content === '... long') {
-          message.channel.send({embed});
-        }
-        require(`./cmds/long.js`);
       });
+
 
 
 client.login(process.env.TOKEN)
