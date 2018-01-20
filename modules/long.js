@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-else if(message.content === '... long'){
+if(message.content === '... long'){
     message.channel.send({embed});
 }
 const embed = new Discord.RichEmbed()
