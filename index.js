@@ -6,7 +6,6 @@ const PREFIX = ".";
 bot.on('ready', function(){
     console.log('pret !');
     bot.user.setGame('vec studiosam');
-    message.chanel.send('hey');
 });
 
 
