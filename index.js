@@ -23,6 +23,12 @@ client.on('message', message => {
     if(message.content[0] === PREFIX){
       if (message.channel.id == '205659347718504449') {
         message.delete();
+        message.author.send(embed: {
+  color: 16581416,
+  "fields": [{
+          "name": "Rappel",
+          "value": "Les commandes se font dans les salon prevu a cette effet merci",
+          "inline": true}]
         return;
       }
         if (message.author.bot) return;
