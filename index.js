@@ -27,13 +27,13 @@ client.on('message', message => {
         const command = args.shift().toLowerCase();
          if(message.content === '... long'){
            let commandFile = require(`./cmds/long.js`);
-           commandFile.run(client, message, args);
+           commandFile.run(client, message, args, Discord);
        }
         try {
            let commandFile = require(`./cmds/${command}.js`);
            commandFile.run(client, message, args);
          } catch (err) {
-           
+
          }
         }
       });
