@@ -28,9 +28,9 @@ client.on('message', message => {
   "fields": [{
           "name": "Rappel",
           "value": "Les commandes se font dans les salon prevu a cette effet merci",
-          "inline": true}])
+          "inline": true}]
         return;
-      }
+      })
         if (message.author.bot) return;
         if(message.content.indexOf(PREFIX) !== 0) return;
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
