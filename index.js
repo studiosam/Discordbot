@@ -21,7 +21,7 @@ client.on('ready', function(){
 
 client.on('message', message => {
     if(message.content[0] === PREFIX){
-      if (message.channel.id !== '404245392159670272' || message.channel.id !== '404245392159670272') {
+      if (message.channel.id == '205659347718504449') {
         message.delete();
         return;
       }
