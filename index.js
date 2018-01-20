@@ -19,7 +19,7 @@ bot.on('message', message => {
         }
 
         try {
-          let commandFile = require(`commands/long.js`);
+          let commandFile = require(`./modules/long.js`);
           commandFile.run(client, message, args);
           } catch (err) {
           console.error(err);
