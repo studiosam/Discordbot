@@ -13,7 +13,7 @@ bot.on('ready', function(){
 bot.on('message', message => {
     if(message.content[0] === PREFIX){
         if(message.content === '.hello'){
-            message.channel.send('```world ! ```')
+            message.channel.send('```World ! ```')
         }
         else if(message.content === '.markdown'){
             message.channel.send(
