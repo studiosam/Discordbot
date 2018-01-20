@@ -21,6 +21,9 @@ client.on('ready', function(){
 
 client.on('message', message => {
     if(message.content[0] === PREFIX){
+      if (message.channel.id !== '404245392159670272' || message.channel.id !== '404245392159670272') {
+        message.delete();
+      }
         if (message.author.bot) return;
         if(message.content.indexOf(PREFIX) !== 0) return;
         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
