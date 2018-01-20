@@ -4,7 +4,14 @@ const client = new Discord.Client({autoReconnect: true});
 const PREFIX = ".";
 const fs = require("fs");
 
-
+fs.readdir("./cmds/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    let eventFunction = require(`./cmds/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, (...args) => eventFunction.run(client, ...args));
+  });
+});
 
 client.on('ready', function(){
     console.log('pret !');
@@ -24,7 +31,12 @@ client.on('message', message => {
         // if(message.content === '... long'){
         //     message.channel.send({embed});
         // }
-
+        try {
+           let commandFile = require(`./cmds/${command}.js`);
+           commandFile.run(client, message, args);
+         } catch (err) {
+           console.error(err);
+         }
         }
       });
 
