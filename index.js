@@ -8,7 +8,7 @@ const fs = require("fs");
 
 client.on('ready', function(){
     console.log('pret !');
-    bot.user.setGame('vec studiosam');
+    client.user.setGame('vec studiosam');
 });
 
 
@@ -51,4 +51,4 @@ client.on('message', message => {
 // .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);
 
 
-bot.login(process.env.TOKEN)
+client.login(process.env.TOKEN)
