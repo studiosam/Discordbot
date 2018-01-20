@@ -14,7 +14,7 @@ fs.readdir("./cmds/",(err, files) => {
   }
   console.log(`${jsfiles.length} command charger`);
 
-  jsfiles.ForEach((f, i) => {
+  jsfiles.forEach((f, i) => {
     let props = require(`./cmds/${f}`);
     console.log(`${i + 1}`);
     bot.commands.set(f, props);
