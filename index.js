@@ -24,10 +24,7 @@ bot.on('message', message => {
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
-        else if(message.content === '.ping'){
-        const m = await message.channel.send("Ping?");
-        m.edit(`Pong! latence: ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-        }    
+  
         }});
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
@@ -39,6 +36,7 @@ bot.on('guildMemberRemove', member => {
         return channel.send('Au revoir '+ member.displayName);
     }).catch(console.error)
 });
+
 const embed = new Discord.RichEmbed()
 .setTitle("Comment utiliser les long artworks")
 
