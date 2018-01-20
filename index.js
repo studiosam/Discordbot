@@ -20,6 +20,11 @@ bot.on('message', message => {
         else if(message.content === '... long'){
             message.channel.send({embed});
         }
+        else if(command === "say") {
+        const sayMessage = args.join(" ");
+         message.delete().catch(O_o=>{}); 
+        message.channel.send(sayMessage);
+    }
         }});
 bot.on('guildMemberAdd', member => {
     member.createDM().then(channel => {
