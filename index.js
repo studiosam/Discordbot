@@ -40,7 +40,7 @@ bot.on('message', message => {
         }
         let cmd = bot.commands.get(command.slice(PREFIX.length));
         if (cmd) {
-          cmd.run(bot, message, args);          
+          cmd.run(bot, message, args)
         }
 
       /*  try {

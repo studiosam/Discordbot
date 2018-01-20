@@ -4,5 +4,5 @@ console.log('long marche');
 
 }
 module.exports.help = {
-  name: "long"
+  name: "test"
 }
