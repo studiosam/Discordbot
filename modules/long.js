@@ -1,4 +1,7 @@
 exports.run = (client, message, args) => {
+  if (command=='hey') {
+    message.channel.send('hey')
+  }
 if(message.content === '... long'){
     message.channel.send({embed});
 }
@@ -23,7 +26,5 @@ Ou celui ci pour upload en screenshot MAIS PAS LES DEUX
 \`\`\`document.getElementsByName("image_width")[0].value=1000;document.getElementsByName("image_height")[0].value=1;document.getElementsByName("file_type")[0].value=5;\`\`\``)
 .addBlankField(true)
 .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);
-
-
 
 }
