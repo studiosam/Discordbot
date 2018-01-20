@@ -12,7 +12,7 @@ client.on('ready', function(){
 });
 
 
-bot.on('message', message => {
+client.on('message', message => {
     if(message.content[0] === PREFIX){
         if (message.author.bot) return;
         if(message.content.indexOf(PREFIX) !== 0) return;
