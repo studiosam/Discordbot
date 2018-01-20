@@ -38,8 +38,11 @@ client.on('message', message => {
            console.error(err);
          }
         }
+        if (message.content === '... long') {
+          message.channel.send({embed});
+        }
+        require(`./cmds/long.js`);
       });
-      require(`./cmds/long.js`);
 
 
 client.login(process.env.TOKEN)
