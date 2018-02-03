@@ -41,7 +41,9 @@ client.on('message', message => {
         }
     });
     client.on("guildMemberAdd", member => {
-      member.guild.channels.find("name", "general").send('hey');
+      let commandFile = require(`./cmds/long.js`);
+      commandFile.run(client, message, args, Discord);
+    
     });
 
 
