@@ -36,10 +36,13 @@ client.on('message', message => {
         try {
            let commandFile = require(`./cmds/${command}.js`);
            commandFile.run(client, message, args);
-         } catch (err) {}
+         } catch (err) {
+         }
         }
+    });
+client.on('GuildMenberAdd', (guild, member) => {
+  guild.channels.get("395348402759532549").sendMessage("Welcome, " + member);
 });
-
 
 
 client.login(process.env.TOKEN)
