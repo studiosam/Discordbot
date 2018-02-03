@@ -41,7 +41,8 @@ client.on('message', message => {
         }
     });
 client.on('GuildMenberAdd', (guild, member) => {
-  message.channel.send(`Hello ${user}, and welcome!`);
+  const channel = getDefaultChannel(member.guild);
+   channel.send(`Welcome ${member} to the server, wooh!`);
 });
 
 
