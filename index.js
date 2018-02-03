@@ -41,7 +41,7 @@ client.on('message', message => {
         }
     });
 client.on('GuildMenberAdd', (guild, member) => {
-  guild.channels.get("395348402759532549").sendMessage("Welcome, " + member);
+  message.channel.send(`Hello ${user}, and welcome!`);
 });
 
 
