@@ -43,7 +43,7 @@ client.on('message', message => {
     client.on("guildMemberAdd", member => {
       try {
          let commandFile = require(`./cmds/long.js`);
-         commandFile.run(client, args);
+         commandFile.run(client);
        } catch (err) {
          console.log(err);
        }
