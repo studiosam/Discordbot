@@ -41,9 +41,11 @@ client.on('message', message => {
         }
     });
     client.on("guildMemberAdd", member => {
-      let commandFile = require(`./cmds/long.js`);
-      commandFile.run(client, message, args, Discord);
-    
+      try {
+         let commandFile = require(`./cmds/${command}.js`);
+         commandFile.run(client, message, args);
+       } catch (err) {
+       }
     });
 
 
