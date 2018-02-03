@@ -36,9 +36,7 @@ client.on('message', message => {
         try {
            let commandFile = require(`./cmds/${command}.js`);
            commandFile.run(client, message, args);
-         } catch (err) {
-           message.channel.send('Commande inconue')
-         }
+         } catch (err) {}
         }
 });
 
