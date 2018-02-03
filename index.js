@@ -40,10 +40,10 @@ client.on('message', message => {
          }
         }
     });
-client.on('GuildMenberAdd', (guild, member) => {
-  const channel = getDefaultChannel(member.guild);
-   channel.send(`Welcome ${member} to the server, wooh!`);
-});
+    client.on("guildMemberAdd", member => {
+      const channel = getDefaultChannel(member.guild);
+      channel.send(`Welcome ${member} to the server, wooh!`);
+    });
 
 
 client.login(process.env.TOKEN)
