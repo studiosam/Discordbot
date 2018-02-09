@@ -41,12 +41,9 @@ client.on('message', message => {
         }
     });
     client.on("guildMemberAdd", member => {
-      let mem = member.guild;
-
-          if (mem.defaultChannel) {
-              mem.defaultChannel.sendMessage(member.user + " welcome to the server!");
-         // let commandFile = require(`./welcome.js`);
-         // commandFile.run(client);
+      const guild = member.guild;
+      const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
+       defaultChannel.send("Welcome our new users!\n" + userlist);
        }
     });
 
