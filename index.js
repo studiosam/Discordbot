@@ -41,11 +41,12 @@ client.on('message', message => {
         }
     });
     client.on("guildMemberAdd", member => {
-      try {
-         let commandFile = require(`./welcome.js`);
-         commandFile.run(client);
-       } catch (err) {
-         console.log(err);
+      let mem = member.guild;
+
+          if (mem.defaultChannel) {
+              mem.defaultChannel.sendMessage(member.user + " welcome to the server!");
+         // let commandFile = require(`./welcome.js`);
+         // commandFile.run(client);
        }
     });
 
