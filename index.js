@@ -43,7 +43,7 @@ client.on('message', message => {
     client.on("guildMemberAdd", member => {
       const guild = member.guild;
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-       defaultChannel.send(`yo ${member} bienvenue sur notre serveur tu est le : `);
+       defaultChannel.send(`yo ${member} bienvenue sur notre serveur tu est le : ${guild.memberCount}`);
      });
 
 
