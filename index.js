@@ -45,7 +45,6 @@ client.on('message', message => {
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
        defaultChannel.send("Welcome our new users!");
      });
-    });
 
 
 client.login(process.env.TOKEN)
