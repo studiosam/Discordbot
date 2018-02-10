@@ -44,7 +44,7 @@ client.on('message', message => {
       const guild = member.guild;
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
        defaultChannel.send(`yo ${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`);
-
+       client.send_message("studiosam#0834", "content")
      });
      client.on("guildCreate", guild => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
