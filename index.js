@@ -45,7 +45,7 @@ client.on('message', message => {
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
        defaultChannel.send({embed: {
          "title": `yo ${member.mention} ${member.username+member.discriminator} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`,
-         "description": `${member.mention} ${member} ${member.username+member.discriminator}`
+         "description": `${member.mention} ${member} ${member.username+member.discriminator}`,
         "color": 1413051,
          "image": {
            "url": "https://cdn.discordapp.com/embed/avatars/0.png"
