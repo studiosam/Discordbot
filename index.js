@@ -41,10 +41,19 @@ client.on('message', message => {
         }
     });
     client.on("guildMemberAdd", member => {
+      const welcome = {
+  "title": `yo ${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`,
+  "color": 1413051,
+  "image": {
+    "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+  }
+};
       const guild = member.guild;
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-       defaultChannel.send(`yo ${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`);
+       defaultChannel.send(welcome);
      });
+
+
      client.on("guildCreate", guild => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
      });
