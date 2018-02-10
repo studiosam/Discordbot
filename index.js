@@ -42,7 +42,7 @@ client.on('message', message => {
     });
     client.on("guildMemberAdd", member => {
       const welcome = {
-  "title": `yo ${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`,
+  "title": `yo ${member} bienvenue sur `, guild.name, ` tu est le ${guild.memberCount} a rejoindre notre serveur`,
   "color": 1413051,
   "image": {
     "url": "https://cdn.discordapp.com/embed/avatars/0.png"
