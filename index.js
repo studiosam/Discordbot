@@ -50,7 +50,7 @@ client.on('message', message => {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
        }})
-       member.delete(1000)
+      delete(1000)
 
      });
 
