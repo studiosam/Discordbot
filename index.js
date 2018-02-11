@@ -47,7 +47,7 @@ client.on('message', message => {
          "description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre`,
         "color": 1413051,
          "image": {
-           "url": "https://imgur.com/a/OpWdk"
+           "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
        }})
      });
