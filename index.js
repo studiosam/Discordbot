@@ -43,10 +43,14 @@ client.on('message', message => {
     client.on("guildMemberAdd", member => {
       const guild = member.guild;
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-
-       const welcome = {`yo ${member}`,{embed: {"description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre`,"color": 1413051,"image": {"url": "https://i.imgur.com/Z3qbHT0.gif"}}}};
-        defaultChannel.send(welcome)
-
+       defaultChannel.send(`yo ${member}`,{embed: {
+         "description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre`,
+        "color": 1413051,
+         "image": {
+           "url": "https://i.imgur.com/Z3qbHT0.gif"
+         }
+       }})
+       //.delete(5000)
      });
 
 
