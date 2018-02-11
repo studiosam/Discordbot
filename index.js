@@ -43,7 +43,7 @@ client.on('message', message => {
     client.on("guildMemberAdd", member => {
       const guild = member.guild;
       const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-       defaultChannel.send("yo",{embed: {
+       defaultChannel.send("yo ${member}",{embed: {
          "description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre notre serveur`,
         "color": 1413051,
          "image": {
