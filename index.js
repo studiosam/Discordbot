@@ -50,7 +50,7 @@ client.on('message', message => {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
        }})
-       message.delete(5000)
+       defaultChannel.delete(5000)
 
      });
 
