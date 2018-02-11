@@ -50,9 +50,9 @@ client.on('message', message => {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
        }})
-      delete(1000)
 
-     });
+
+     }.delete(1000));
 
 
      client.on("guildCreate", guild => {
