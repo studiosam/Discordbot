@@ -49,7 +49,8 @@ client.on('message', message => {
          "image": {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
-       }}).delete(5000)
+       }})
+       message.delete(5000)
 
      });
 
