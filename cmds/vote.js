@@ -4,8 +4,7 @@ message.channel.send(":apple:")
             .then(function (message) {
               message.react("👍")
               message.react("👎")
-              message.pin()
-              message.delete()
+              message.delete(1000)
             }).catch(function() {
               //Something
              });
