@@ -54,7 +54,7 @@ client.on('message', message => {
      client.on('messageReactionAdd', (reaction, user) => {
     if(reaction.emoji.name === ":wastebasket:️") {
     console.log(reaction.users);
-}
+}});
 
      client.on("guildCreate", guild => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
