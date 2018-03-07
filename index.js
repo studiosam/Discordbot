@@ -52,7 +52,7 @@ client.on('message', message => {
        }})
      });
      client.on('messageReactionAdd', (reaction, user) => {
-         if(reaction.emoji.name === ":wastebasket:") {
+         if(reaction.emoji.name === ":wastebasket:" && reaction.count() == 2) {
            reaction.message.delete()
              console.log(reaction.users);
          }
