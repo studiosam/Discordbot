@@ -53,7 +53,7 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "✅") {
-           
+           MessageReaction.message.remove()
              console.log(reaction.users);
          }
      });
