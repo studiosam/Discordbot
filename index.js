@@ -53,7 +53,7 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "👎") {
-           reaction.message.remove()
+           reaction.message.delete()
              console.log(reaction.users);
          }
      });
