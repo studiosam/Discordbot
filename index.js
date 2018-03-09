@@ -61,4 +61,4 @@ client.on('message', message => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
      });
 
-client.login(config.token)
+client.login(process.env.TOKEN)
