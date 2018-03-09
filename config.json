@@ -1,0 +1,5 @@
+{
+  "token": "process.env.TOKEN",
+  "prefix": ".",
+  "ownerID": "your-user-ID"
+}

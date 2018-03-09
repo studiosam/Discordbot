@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({autoReconnect: true});
-
-const PREFIX = ".";
+const config = require("./config.json");
+const PREFIX = "config.prefix";
 const fs = require("fs");
 
 fs.readdir("./cmds/", (err, files) => {
@@ -61,4 +61,4 @@ client.on('message', message => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
      });
 
-client.login(process.env.TOKEN)
+client.login(config.token)
