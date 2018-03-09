@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({autoReconnect: true});
-const config = require("./config.json");
-const PREFIX = "config.prefix";
+
+const PREFIX = ".";
 const fs = require("fs");
 
 fs.readdir("./cmds/", (err, files) => {
