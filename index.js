@@ -24,7 +24,7 @@ client.on('message', message => {
     if(message.content[0] == config.prefix){
       message.channel.send(":apple:")
 
-        if(message.content.indexOf(config.prefix) !== 0) return;
+        if(message.content.indexOf(config.prefix) != 0) return;
         const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
          if(message.content === '... long'){
@@ -35,6 +35,7 @@ client.on('message', message => {
            let commandFile = require(`./cmds/${command}.js`);
            commandFile.run(client, message, args);
          } catch (err) {
+           console.log(err);
          }
         }
     });
