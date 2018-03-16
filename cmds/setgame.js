@@ -1,3 +1,3 @@
 exports.run = (client, message, args) => {
-    client.user.setGame(args)
+    client.user.setGame(args);
 }

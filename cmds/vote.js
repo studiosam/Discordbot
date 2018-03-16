@@ -5,7 +5,7 @@ message.channel.send(":apple:")
               message.react("👍")
               message.react("👎")
             }).catch(function() {
-              //Something
+              
              });
 
 }
