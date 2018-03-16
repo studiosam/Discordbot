@@ -1,4 +1,4 @@
 exports.run = (client, message, args) => {
-    client.user.setActivity(args[0], { type: 'PLAYING' });
+    client.user.setPresence({ game: { name: 'some name', type: 0 } });
 
 }
