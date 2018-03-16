@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({autoReconnect: true});
 
-const PREFIX = ".";
+const config = require("./config.json");
+//const PREFIX = ".";
 const fs = require("fs");
 
 fs.readdir("./cmds/", (err, files) => {
@@ -20,7 +21,7 @@ client.on('ready', function(){
 
 
 client.on('message', message => {
-    if(message.content[0] === PREFIX){
+    if(message.content[0] === config.prefix){
       if (message.channel.id == '205659347718504449') {
         message.delete();
         return;
