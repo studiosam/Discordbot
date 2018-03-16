@@ -22,7 +22,7 @@ client.on('ready', function(){
 
 client.on('message', message => {
   message.channel.send(":apple:")
-    if(message.content[0] === config.prefix){
+    if(message.content[0] == config.prefix){
         if(message.content.indexOf(config.prefix) !== 0) return;
         const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
