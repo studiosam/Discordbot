@@ -45,8 +45,9 @@ client.on('message', message => {
          "image": {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
-       }})
-       defaultChannel.
+       }}).then(() => {
+         delete(1000)
+       })
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "💩") {
