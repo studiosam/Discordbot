@@ -22,10 +22,7 @@ module.exports.run = async (client, message, args, Discord) => {
   .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);
       message.delete(1);
       message.channel.send({embed});
-
-
-
-}
+}.then(msg => msg.react("💩"))
 module.exports.help = {
   name: "test"
 }
