@@ -49,9 +49,10 @@ client.on('message', message => {
      );
      });
      client.on('messageReactionAdd', (reaction, user) => {
-         if(reaction.emoji.name === "💩" && reaction.count == 2) {
-
+         if(reaction.emoji.name === "💩" && reaction.count >= 2 && reaction.user.roles.some(r=>["Dev", "Mod", "Server Staff", "Proficient"].includes(r.name))) {
              reaction.message.delete(10)
+         }else {
+           console.log('non');
          }
      });
 
