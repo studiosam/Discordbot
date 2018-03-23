@@ -49,7 +49,9 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "💩") {
-           reaction.message.delete()
+           if (reaction.count("💩") == 2) {
+             reaction.message.delete()
+           }
          }
      });
 
