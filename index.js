@@ -49,7 +49,7 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "💩") {
-           if (reaction.count("💩") == 2) {
+           if (reaction.count.emoji("💩") == 2) {
              reaction.message.delete()
            }
          }
