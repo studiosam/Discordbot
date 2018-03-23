@@ -45,7 +45,7 @@ client.on('message', message => {
          "image": {
            "url": "https://i.imgur.com/Z3qbHT0.gif"
          }
-       }}).then(msg => delete(1000)
+       }}).then(msg => msg.delete(10000)
      );
      });
      client.on('messageReactionAdd', (reaction, user) => {
