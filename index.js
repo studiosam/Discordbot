@@ -49,7 +49,8 @@ client.on('message', message => {
      );
      });
      client.on('messageReactionAdd', (reaction, user) => {
-         if(reaction.emoji.name === "💩" && reaction.count >= 2 && reaction.user.permission.has(permission, [checkAdmin]) ) {
+       let has_kick = message.member.hasPermission("KICK_MEMBERS");
+         if(reaction.emoji.name === "💩" && reaction.count >= 2 && has_kick ) {
 
              reaction.message.delete(10)
          }
