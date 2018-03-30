@@ -48,7 +48,7 @@ client.on('message', message => {
        }}).then(msg => msg.delete(10000)
      );
      });
-     client.on('messageReactionAdd', (reaction, user) => {
+     client.on('messageReactionAdd', (reaction, user, guild) => {
          if(reaction.emoji.name === "🗑" && reaction.count >= 2 && guild.fetchMember(user).hasPermission("MANAGE_MESSAGES") ) {
              reaction.message.delete(10)
          }
