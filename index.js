@@ -50,8 +50,7 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user, guild) => {
          if(reaction.emoji.name === "🗑" && reaction.count >= 2 ) {
-           if (reaction.message.guild.fetchMember(user).hasPermission("MANAGE_MESSAGES") == true) {
-
+           if (reaction.message.guild.fetchMember(user).hasPermission("MANAGE_MESSAGES")) {
              reaction.message.delete(10)
            }
          }
