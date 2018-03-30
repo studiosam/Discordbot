@@ -49,7 +49,7 @@ client.on('message', message => {
      );
      });
      client.on('messageReactionAdd', (reaction, user) => {
-         if(reaction.emoji.name === "💩" && reaction.count >= 2 && user.roles.some(r=>["FONDA", "Mod", "Server Staff", "Proficient"].includes(r.name)) ) {
+         if(reaction.emoji.name === "💩" && reaction.count >= 2 && user.roles.find("name", "Team Mystic") ) {
 
              reaction.message.delete(10)
          }
