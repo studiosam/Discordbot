@@ -50,7 +50,7 @@ client.on('message', message => {
      });
      client.on('messageReactionAdd', (reaction, user) => {
          if(reaction.emoji.name === "💩" && reaction.count >= 2 ) {
-           if (user.has.Permissions('BAN_MEMBERS')) {
+           if (user.has('BAN_MEMBERS')) {
              reaction.message.delete(10)
              }
          }
