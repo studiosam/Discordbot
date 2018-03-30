@@ -49,7 +49,7 @@ client.on('message', message => {
      );
      });
      client.on('messageReactionAdd', (reaction, user) => {
-         if(reaction.emoji.name === "💩" && reaction.count >= 2 && user.roles.permissions.has('BAN_MEMBERS') ) {
+         if(reaction.emoji.name === "💩" && reaction.count >= 2 && user.permissions.has('BAN_MEMBERS') ) {
 
              reaction.message.delete(10)
          }
