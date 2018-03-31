@@ -4,11 +4,20 @@ const client = new Discord.Client({autoReconnect: true});
 const PREFIX = ".";
 const fs = require("fs");
 
-fs.readdir("./cmds/", (err, files) => {
+// fs.readdir("./cmds/", (err, files) => {
+//   if (err) return console.error(err);
+//   files.forEach(file => {
+//     let eventFunction = require(`./cmds/${file}`);
+//     let eventName = file.split(".")[0];
+//     client.on(eventName, (...args) => eventFunction.run(client, ...args));
+//   });
+// });
+fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
-    let eventFunction = require(`./cmds/${file}`);
+    let eventFunction = require(`./events/${file}`);
     let eventName = file.split(".")[0];
+    // super-secret recipe to call events with all their proper arguments *after* the `client` var.
     client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
@@ -36,18 +45,18 @@ client.on('message', message => {
          }
         }
     });
-    client.on("guildMemberAdd", member => {
-      const guild = member.guild;
-      const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-       defaultChannel.send(`yo ${member}`,{embed: {
-         "description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre`,
-        "color": 1413051,
-         "image": {
-           "url": "https://i.imgur.com/Z3qbHT0.gif"
-         }
-       }}).then(msg => msg.delete(10000)
-     );
-     });
+    // client.on("guildMemberAdd", member => {
+    //   const guild = member.guild;
+    //   const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
+    //    defaultChannel.send(`yo ${member}`,{embed: {
+    //      "description": `${member} bienvenue sur ${guild.name} tu est le ${guild.memberCount} a rejoindre`,
+    //     "color": 1413051,
+    //      "image": {
+    //        "url": "https://i.imgur.com/Z3qbHT0.gif"
+    //      }
+    //    }}).then(msg => msg.delete(10000)
+    //  );
+    //  });
      client.on('messageReactionAdd', (reaction, user, guild) => {
          if(reaction.emoji.name === "🗑" && reaction.count >= 2 ) {
            if (reaction.message.guild.fetchMember(user).hasPermission("MANAGE_MESSAGES")) {
