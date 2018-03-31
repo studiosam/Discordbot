@@ -45,11 +45,11 @@ client.on('message', message => {
          }
         }
     });
-     // client.on('messageReactionAdd', (reaction, user, guild) => {
-     //     if(reaction.emoji.name === "🗑" && reaction.count >= 2 ) {
-     //         reaction.message.delete(10)
-     //     }
-     // });
+     client.on('messageReactionAdd', (reaction, user, guild) => {
+         if(reaction.emoji.name === "🗑" && reaction.count >= 2 ) {
+             reaction.message.delete(10)
+         }
+     });
 
      client.on("guildCreate", guild => {
        console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
