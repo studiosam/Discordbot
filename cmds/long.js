@@ -1,7 +1,6 @@
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, Discord) => {
   const embed = new Discord.RichEmbed()
   .setTitle("Comment utiliser les long artworks")
-
   .setColor(3447003)
   .setDescription(`[Le guide complet](http://steamcommunity.com/sharedfiles/filedetails/?id=1248810682)`)
   .setThumbnail("https://images-ext-1.discordapp.net/external/0cYDE6RVJBguQycSxmuwZiL_bdubAAzI7L41G09QUS4/http/i.oddball.tf/TRlwX.gif?width=80&height=80")
