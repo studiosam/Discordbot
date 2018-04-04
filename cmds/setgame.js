@@ -1,4 +1,4 @@
 exports.run = (client, message, args) => {
-    client.user.setActivity(`args[1]`, { type: `args[0]` });
+    client.user.setActivity(`args[0]`, { type: `args[1]` });
 
 }
