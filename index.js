@@ -15,10 +15,10 @@ fs.readdir("./events/", (err, files) => {
   });
 });
 
-client.on('ready', function(){
-    console.log('pret !');
-    client.user.setGame('vec studiosam');
-});
+// client.on('ready', function(){
+//     console.log('pret !');
+//     client.user.setGame('vec studiosam');
+// });
 
 
 // client.on('message', message => {
