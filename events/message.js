@@ -1,4 +1,5 @@
 exports.run = (client, member,message) => {
+  const PREFIX = ".";
 if(message.content[0] === PREFIX){
     if (message.author.bot) return;
     if(message.content.indexOf(PREFIX) !== 0) return;
