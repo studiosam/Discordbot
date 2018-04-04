@@ -1,8 +1,4 @@
 exports.run = (client) => {
   console.log('pret ! hhm');
-  client.user.setPresence({
-     game: {
-       name: 'les pro',
-       type: 3
-     }});
+  client.user.setActivity('la vie passé', { type: 'WATCHING' });
 }
