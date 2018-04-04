@@ -44,8 +44,8 @@ client.on('message', message => {
          }
      });
 
-     // client.on("guildCreate", guild => {
-     //   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-     // });
+     client.on("guildCreate", guild => {
+       console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+     });
 
 client.login(process.env.TOKEN)
