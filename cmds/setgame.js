@@ -1,4 +1,4 @@
 exports.run = (client, message, args) => {
-    client.user.setActivity(`args[0]`);
+    client.user.setPresence({ game: { name: `${args}`, type: 2 } });
 
 }
