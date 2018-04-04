@@ -4,5 +4,5 @@ exports.run = (client) => {
      game: {
        name: 'les pro',
        type: 3
-     });
+     }});
 }
