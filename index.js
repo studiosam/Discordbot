@@ -4,14 +4,7 @@ const client = new Discord.Client({autoReconnect: true});
 const PREFIX = ".";
 const fs = require("fs");
 
-// fs.readdir("./cmds/", (err, files) => {
-//   if (err) return console.error(err);
-//   files.forEach(file => {
-//     let eventFunction = require(`./cmds/${file}`);
-//     let eventName = file.split(".")[0];
-//     client.on(eventName, (...args) => eventFunction.run(client, ...args));
-//   });
-// });
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -28,23 +21,23 @@ client.on('ready', function(){
 });
 
 
-client.on('message', message => {
-    if(message.content[0] === PREFIX){
-        if (message.author.bot) return;
-        if(message.content.indexOf(PREFIX) !== 0) return;
-        const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
-        const command = args.shift().toLowerCase();
-         if(message.content === '... long'){
-           let commandFile = require(`./cmds/long.js`);
-           commandFile.run(client, message, args, Discord);
-       }
-        try {
-           let commandFile = require(`./cmds/${command}.js`);
-           commandFile.run(client, message, args);
-         } catch (err) {
-         }
-        }
-    });
+// client.on('message', message => {
+//     if(message.content[0] === PREFIX){
+//         if (message.author.bot) return;
+//         if(message.content.indexOf(PREFIX) !== 0) return;
+//         const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
+//         const command = args.shift().toLowerCase();
+//          if(message.content === '... long'){
+//            let commandFile = require(`./cmds/long.js`);
+//            commandFile.run(client, message, args, Discord);
+//        }
+//         try {
+//            let commandFile = require(`./cmds/${command}.js`);
+//            commandFile.run(client, message, args);
+//          } catch (err) {
+//          }
+//         }
+//     });
      client.on('messageReactionAdd', (reaction, user, guild) => {
          if(reaction.emoji.name === "🗑" && reaction.count >= 2 ) {
              reaction.message.delete(10)
