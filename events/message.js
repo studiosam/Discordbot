@@ -1,4 +1,4 @@
-exports.run = (client, message) => {
+exports.run = (client, message, Discord) => {
   const PREFIX = ".";
 if(message.content[0] === PREFIX){
     if (message.author.bot) return;
@@ -7,7 +7,7 @@ if(message.content[0] === PREFIX){
     const command = args.shift().toLowerCase();
      if(message.content === '... long'){
        let commandFile = require(`../cmds/long.js`);
-       commandFile.run(client, message, args);
+       commandFile.run(client, message, args, Discord);
    }
     try {
        let commandFile = require(`../cmds/${command}.js`);
