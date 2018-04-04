@@ -1,4 +1,4 @@
-module.exports.run = async (client, message, args, Discord) => {
+module.exports.run = async (client, message, args) => {
   const embed = new Discord.RichEmbed()
   .setTitle("Comment utiliser les long artworks")
 
