@@ -11,7 +11,7 @@ if(message.content[0] === PREFIX){
    }
     try {
        let commandFile = require(`../cmds/${command}.js`);
-       commandFile.run(client, message, args);
+       commandFile.run(client, message, args).then(msg => msg.react("🗑");
      } catch (err) {
      }
     }
