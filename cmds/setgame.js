@@ -1,4 +1,5 @@
 exports.run = (client, message, args) => {
-    client.user.setPresence({ game: { name: `${args.slice(1,10)}`, type: 2 } });
+    const games = args.slice(1, 3);
+    client.user.setPresence({ game: { name: `${games}`, type: 2 } });
 
 }
