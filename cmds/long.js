@@ -1,9 +1,9 @@
 module.exports.run = async (client, message, args, Discord) => {
   const embed = new Discord.RichEmbed(
-  .setTitle("Comment utiliser les long artworks")
-  .setColor(3447003)
-  .setDescription(`[Le guide complet](http://steamcommunity.com/sharedfiles/filedetails/?id=1248810682)`)
-  .setThumbnail("https://images-ext-1.discordapp.net/external/0cYDE6RVJBguQycSxmuwZiL_bdubAAzI7L41G09QUS4/http/i.oddball.tf/TRlwX.gif?width=80&height=80")
+  .Title("Comment utiliser les long artworks")
+  .Color(3447003)
+  .Description(`[Le guide complet](http://steamcommunity.com/sharedfiles/filedetails/?id=1248810682)`)
+  .Thumbnail("https://images-ext-1.discordapp.net/external/0cYDE6RVJBguQycSxmuwZiL_bdubAAzI7L41G09QUS4/http/i.oddball.tf/TRlwX.gif?width=80&height=80")
   .addField("Etapes 1",
   `Ouvre cette page : http://steamcommunity.com/sharedfiles/edititem/767/3/
   Choisi ton fichier et envoie le.`)
