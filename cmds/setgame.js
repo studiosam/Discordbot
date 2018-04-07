@@ -2,6 +2,7 @@ exports.run = (client, message, args) => {
     const games = args.slice(1, args.length).join(" ");
     const type = ["joue a", "en stream", "ecoute", "regarde"]
     message.channel.send(`${type[args[0]]} ${games}`);
-    client.user.setPresence({ game: { name: `${games}`, type: args[0] } });
+    //client.user.setPresence({ game: { name: `${games}`, type: args[0] } });
+    client.user.setActivity('yourGameNameHere', { type: 'WATCHING' });
 
 }
