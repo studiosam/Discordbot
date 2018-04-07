@@ -1,5 +1,5 @@
 module.exports.run = async (client, message, args, Discord) => {
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.RichEmbed(
   .setTitle("Comment utiliser les long artworks")
   .setColor(3447003)
   .setDescription(`[Le guide complet](http://steamcommunity.com/sharedfiles/filedetails/?id=1248810682)`)
@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args, Discord) => {
   Ou celui ci pour upload en screenshot MAIS PAS LES DEUX
   \`\`\`document.getElementsByName("image_width")[0].value=1000;document.getElementsByName("image_height")[0].value=1;document.getElementsByName("file_type")[0].value=5;\`\`\``)
   .addBlankField(true)
-  .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);
+  .addField("Etapes 4",`Appui sur entre tu peu ferme la console. Remplie les champs titre tu certifie que c'est a toi et tu enregistre`);)
       message.delete(1);
       message.channel.send({embed}).then(msg => msg.react("🗑"));
 }
