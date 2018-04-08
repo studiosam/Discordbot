@@ -9,6 +9,7 @@
   "author": "Studiosam",
   "license": "ISC",
   "dependencies": {
+    "pg": "7.4.1",
     "discord.js": "^11.2.1"
   }
 }
